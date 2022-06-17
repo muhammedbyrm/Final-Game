@@ -42,3 +42,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1982430725
+    locked: 0
+  - name: Climb
+    uniqueID: 4125372553
+    locked: 0
