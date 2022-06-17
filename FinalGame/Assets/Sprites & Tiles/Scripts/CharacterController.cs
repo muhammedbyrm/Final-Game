@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterController : MonoBehaviour
 {
+
+
 
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Animator anim;
 
     private bool jump;
-    private bool grounded;
-    private bool moving;
+    public bool grounded;
+    public bool moving;
 
 
     private float jumpForce = 8.0f;
@@ -24,17 +27,21 @@ public class CharacterController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
     }
 
     private void FixedUpdate()
     {
-        if (rb.velocity != Vector2.zero) //velocity im sýfýr deðilse
+        if (rb.velocity != Vector2.zero) //velocity im sï¿½fï¿½r deï¿½ilse
         {
             moving = true;
+
+
         }
         else
         {
             moving = false;
+
         }
 
         rb.velocity = new Vector2(speed * moveDirection, rb.velocity.y);
@@ -94,5 +101,7 @@ public class CharacterController : MonoBehaviour
         }
 
     }
+
+   
 
 }
