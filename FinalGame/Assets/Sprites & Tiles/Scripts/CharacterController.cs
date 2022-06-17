@@ -18,8 +18,6 @@ public class CharacterController : MonoBehaviour
     private float speed = 1.0f;
     float moveDirection;
 
-    public AudioClip[] sounds;
-    private AudioSource source;
 
     private void Awake()
     {
@@ -30,7 +28,7 @@ public class CharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity != Vector2.zero) //velocity im sï¿½fï¿½r deï¿½ilse
+        if (rb.velocity != Vector2.zero) //velocity im sýfýr deðilse
         {
             moving = true;
         }
@@ -51,7 +49,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        source = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -84,8 +82,6 @@ public class CharacterController : MonoBehaviour
             grounded = false;
             anim.SetTrigger("jump");
             anim.SetBool("grounded", true);
-            source.clip = sounds[1];
-            source.PlayOneShot(source.clip);
         }
     }
 
