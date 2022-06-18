@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -11,15 +11,19 @@ public class CharacterController : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Animator anim;
+    private BoxCollider2D bodyCollider;
+    
 
     private bool jump;
     public bool grounded;
     public bool moving;
 
 
-    private float jumpForce = 8.0f;
-    private float speed = 1.0f;
+    [SerializeField] float jumpForce = 5.0f;
+    [SerializeField] float speed = 3.0f;
+    [SerializeField] float climbSpeed = 5f;
     float moveDirection;
+    float gravityScaleAtStart;
 
 
     private void Awake()
@@ -27,7 +31,8 @@ public class CharacterController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-
+        bodyCollider = GetComponent<BoxCollider2D>();
+        gravityScaleAtStart = rb.gravityScale;
     }
 
     private void FixedUpdate()
@@ -90,6 +95,8 @@ public class CharacterController : MonoBehaviour
             anim.SetTrigger("jump");
             anim.SetBool("grounded", true);
         }
+
+        ClimbLadder();
     }
 
 
@@ -99,9 +106,25 @@ public class CharacterController : MonoBehaviour
         {
             grounded = true;
         }
-
     }
 
-   
 
+    private void ClimbLadder()
+    {
+        if (!bodyCollider.IsTouchingLayers(LayerMask.GetMask("Climbing")))
+        {
+            anim.SetBool("climb", false);
+            rb.gravityScale = gravityScaleAtStart;
+            return;
+        }
+
+        float controlThrow = Input.GetAxis("Vertical");
+        Vector2 climbVelocity = new Vector2(rb.velocity.x, controlThrow * climbSpeed);
+        rb.velocity = climbVelocity;
+        rb.gravityScale = 0f;
+
+        bool playerHasVerticalSpeed = Mathf.Abs(rb.velocity.y) > Mathf.Epsilon;
+        anim.SetBool("climb", playerHasVerticalSpeed);
+
+    }
 }
