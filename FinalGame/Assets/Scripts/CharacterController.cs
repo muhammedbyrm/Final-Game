@@ -15,7 +15,7 @@ public class CharacterController : MonoBehaviour
     
 
     private bool jump;
-    public bool grounded;
+    public bool grounded = true;
     public bool moving;
 
 
@@ -97,6 +97,7 @@ public class CharacterController : MonoBehaviour
         }
 
         ClimbLadder();
+
     }
 
 

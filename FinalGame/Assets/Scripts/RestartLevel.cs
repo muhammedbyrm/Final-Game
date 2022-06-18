@@ -9,6 +9,7 @@ public class RestartLevel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            NextLevel.numOFKey = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
