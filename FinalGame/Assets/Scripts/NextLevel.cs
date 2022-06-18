@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NextLevel : MonoBehaviour
 {
 
-    private static int numOFKey = 0;
+    public static int numOFKey = 0;
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

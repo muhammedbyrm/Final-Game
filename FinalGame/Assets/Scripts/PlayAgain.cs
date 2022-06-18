@@ -8,6 +8,7 @@ public class PlayAgain : MonoBehaviour
 {
     public void Restart()
     {
+        NextLevel.numOFKey = 0;
         SceneManager.LoadScene("Level1");
     }
 
