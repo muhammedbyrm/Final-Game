@@ -18,12 +18,12 @@ public class Follow2 : MonoBehaviour
         distanceTravelled += speed * Time.deltaTime;
         transform.position =pathCreator.path.GetPointAtDistance(distanceTravelled);
     
-        if(bat.transform.position.y < 3.22 )
+        if(bat.transform.position.y < -1.20 )
         {
             bat.transform.localScale = new Vector3(1,1,1);
             
         }
-        else if(bat.transform.position.y > 3.22)
+        else if(bat.transform.position.y > -1.20)
         {
             bat.transform.localScale = new Vector3(-1,1,1);
         }
