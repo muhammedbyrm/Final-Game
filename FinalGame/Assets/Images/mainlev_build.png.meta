@@ -1338,10 +1338,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -15, y: 24}
+      - - {x: -15, y: 21}
         - {x: -15, y: -24}
         - {x: 15, y: -24}
-        - {x: 15, y: 24}
+        - {x: 15, y: 21}
       tessellationDetail: 0
       bones: []
       spriteID: 05c205a82d5b30e4b9e4471007de1e97
@@ -4608,8 +4608,8 @@ TextureImporter:
       mainlev_build_44: 1801139196
       mainlev_build_22: -893562453
       mainlev_build_42: 927645137
-      mainlev_build_56: -1140513857
       mainlev_build_185: 1422285021
+      mainlev_build_56: -1140513857
       mainlev_build_129: -645666554
       mainlev_build_13: 914658431
       mainlev_build_35: 764896806

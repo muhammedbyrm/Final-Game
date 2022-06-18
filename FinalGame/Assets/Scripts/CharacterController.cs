@@ -106,13 +106,6 @@ public class CharacterController : MonoBehaviour
         {
             grounded = true;
         }
-
-        Debug.Log(collision.gameObject.name);
-
-        if (collision.gameObject.CompareTag("Lava"))
-        {
-            SceneManager.LoadScene("GameOver");
-        }
     }
 
 
