@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private Animator anim;
-    private BoxCollider2D bodyCollider;
+    private CapsuleCollider2D bodyCollider;
     
 
     private bool jump;
@@ -31,7 +31,7 @@ public class CharacterController : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        bodyCollider = GetComponent<BoxCollider2D>();
+        bodyCollider = GetComponent<CapsuleCollider2D>();
         gravityScaleAtStart = rb.gravityScale;
     }
 
