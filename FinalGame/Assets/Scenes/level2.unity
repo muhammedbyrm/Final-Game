@@ -6932,6 +6932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020477108}
   - component: {fileID: 1020477109}
+  - component: {fileID: 1020477110}
   m_Layer: 0
   m_Name: Easter Egg
   m_TagString: EasterEgg
@@ -6964,7 +6965,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.25481987, y: 0.3567481}
@@ -6980,6 +6981,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6552505, y: 2.179452}
   m_EdgeRadius: 0
+--- !u!114 &1020477110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020477106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b33ea43fcd42340aa7ae12fe2423d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1086812368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 275445313031809694, guid: 97c16ab3386fb764e9ba5ccbb16c9aa5, type: 3}
