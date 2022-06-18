@@ -9,6 +9,8 @@ TagManager:
   - EasterEgg
   - Lava
   - Key
+  - Collectable
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -25,6 +25,8 @@ public class CharacterController : MonoBehaviour
     float moveDirection;
     float gravityScaleAtStart;
 
+    public AudioClip[] sounds;
+    public AudioSource source;
 
     private void Awake()
     {
@@ -61,7 +63,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,19 +96,42 @@ public class CharacterController : MonoBehaviour
             grounded = false;
             anim.SetTrigger("jump");
             anim.SetBool("grounded", true);
+            playSound(1);
+            
+
         }
 
         ClimbLadder();
 
     }
 
+     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Collectable"))
+        {          
+            playSound(0);
+        }
+    }
+
+    public void playSound(int index){
+        source.clip = sounds[index];
+        source.PlayOneShot(source.clip);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = true;
+            
         }
+
+         if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            playSound(2);
+            
+        }
+
     }
 
 
